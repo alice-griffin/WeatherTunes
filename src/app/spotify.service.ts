@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,26 @@ export class SpotifyService {
         Authorization: 'Basic ' + btoa(this.clientId + ':' + this.clientSecret),
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-    })
+    });
+  }
+  getPlaylist(data: any): Observable<any> {
+    let params = {
+      limit: data.limit ? data.limit : 10,
+      seed_artists: data.seed_artists ? data.seed_artists : '4NHQUGzhtTLFvgF5SZesLK',
+      target_valence: data.target_valence ? data.target_valence : 0.5,
+      target_tempo: data.target_tempo ? data.target_tempo : 90,
+      target_energy: data.target_energy ? data.target_energy : 1,
+      target_danceability: data.target_danceability ? data.target_danceability : 0.7
+    }
+    return this.http.get('https://api.spotify.com/v1/recommendations', {params: params, headers: {Authorization: this.token}});
+  }
+
+  getArtistId(data: any): Observable<any> {
+    return this.http.get('https://api.spotify.com/v1/search', {params: {q: 'R', type: "artist", limit: data.limit ? data.limit : 1}, headers: {Authorization: this.token}});
+  }
+
+  getGenres() {
+    return this.http.get('https://api.spotify.com/v1/recommendations/available-genre-seeds', {headers: {Authorization: this.token}})
   }
 
 }
