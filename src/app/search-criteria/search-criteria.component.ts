@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { SpotifyService } from '../spotify.service';
 import { NgForm } from '@angular/forms';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-search-criteria',
@@ -14,6 +15,12 @@ export class SearchCriteriaComponent implements OnInit {
 
   weather: any;
   weatherDesc: string;
+  isSubmitted: boolean = false; 
+  icon: any; 
+  iconUrl: string;
+  artist: any;
+  artistId: string;
+  playlist: any; 
 
   ngOnInit(): void {
     this.spotifyService.getToken().subscribe((data: any) => {
@@ -29,6 +36,18 @@ export class SearchCriteriaComponent implements OnInit {
       this.weatherDesc = data.weather[0].description;
       console.log(this.weatherDesc);
       console.log(this.weather);
+      this.isSubmitted = true; 
+      this.icon = data.weather[0].icon;
+      this.iconUrl = "http://openweathermap.org/img/wn/" + this.icon + ".png";
     });
-  }
+  };
+
+  artistFormSubmitted(data: NgForm) { 
+    this.spotifyService.getArtistId({}).subscribe((data: any ) => {
+      this.artist = data; 
+      this.artistId = data.artists.items[0].id; 
+      console.log(this.artistId);
+    });
+}
+
 }

@@ -1,3 +1,8 @@
 <form class="formClass" #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
-    <input name="zipCode" type="number" id="zipCode" ngModel>
+    <h3>Enter your zipcode:</h3><input name="zipCode" type="number" id="zipCode" ngModel>
+    <div [style.display]="isSubmitted ? 'block' : 'none' "><img id="wi-icon" [src]="this.iconUrl"></div>
+</form>
+
+<form class="form2Class" #searchMusicForm="ngForm" (submit)="artistFormSubmitted(searchMusicForm)">
+    <h3>Type in an artist you've been enjoying.</h3><input name="artist" type="text" id="artist" ngModel>
 </form>

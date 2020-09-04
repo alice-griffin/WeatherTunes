@@ -10,6 +10,8 @@ export class SpotifyService {
   token: string;
   clientId: string = 'd0502d4fc5a9406b8afda0decad6a3d0';
   clientSecret: string = '6f9fdb44e4bf49bda20513dd4399bff6';
+  playlist: any; 
+  artist: any; 
 
   constructor(private http: HttpClient) { }
 
@@ -24,11 +26,11 @@ export class SpotifyService {
   getPlaylist(data: any): Observable<any> {
     let params = {
       limit: data.limit ? data.limit : 10,
-      seed_artists: data.seed_artists ? data.seed_artists : '4NHQUGzhtTLFvgF5SZesLK',
-      target_valence: data.target_valence ? data.target_valence : 0.5,
-      target_tempo: data.target_tempo ? data.target_tempo : 90,
-      target_energy: data.target_energy ? data.target_energy : 1,
-      target_danceability: data.target_danceability ? data.target_danceability : 0.7
+      seed_artists: data.artist ? data.artist : '',
+      // target_valence: data.target_valence ? data.target_valence : 0.5,
+      // target_tempo: data.target_tempo ? data.target_tempo : 90,
+      // target_energy: data.target_energy ? data.target_energy : 1,
+      // target_danceability: data.target_danceability ? data.target_danceability : 0.7
     }
     return this.http.get('https://api.spotify.com/v1/recommendations', {params: params, headers: {Authorization: this.token}});
   }
