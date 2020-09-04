@@ -1,35 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../app/weather.service';
-import { NgForm } from '@angular/forms';  
-import { SpotifyService } from '../app/spotify.service';
+import { Component } from '@angular/core';
+import { SpotifyService } from './spotify.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'frontend';
 
-  constructor(private weatherService: WeatherService, private spotifyService: SpotifyService) {};
+  genre: any[]; 
 
-  weather: any;
-  weatherDesc: string;
-
-  ngOnInit(): void {
+  constructor(private spotifyService: SpotifyService) {
     this.spotifyService.getToken().subscribe((data: any) => {
       console.log(data);
       this.spotifyService.token = 'Bearer ' + data.access_token;
-    })
-    
-  }
 
-  formSubmitted(data: NgForm) {
-    this.weatherService.getWeather(data.value.zipCode).subscribe((data: any) => {
-      this.weather = data; 
-      this.weatherDesc = data.weather[0].description;
-      console.log(this.weatherDesc);
-      console.log(this.weather);
+      this.spotifyService.getPlaylist({}).subscribe((response: any) => {
+        console.log(response);
+
+      this.spotifyService.getArtistId({}).subscribe((res: any ) => {
+        console.log(res);
+
+      this.spotifyService.getGenres().subscribe((reply: any) => {
+        this.genre = reply; 
+        console.log(reply);
+      })
+      })
+      })
     });
   }
 }
