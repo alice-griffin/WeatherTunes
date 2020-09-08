@@ -10,8 +10,9 @@ export class SpotifyService {
   token: string;
   clientId: string = 'd0502d4fc5a9406b8afda0decad6a3d0';
   clientSecret: string = '6f9fdb44e4bf49bda20513dd4399bff6';
-  playlist: any; 
+  playlist: any[]; 
   artist: any; 
+  artistId: any;
 
   constructor(private http: HttpClient) { }
 
@@ -35,8 +36,16 @@ export class SpotifyService {
     return this.http.get('https://api.spotify.com/v1/recommendations', {params: params, headers: {Authorization: this.token}});
   }
 
-  getArtistId(data: any): Observable<any> {
-    return this.http.get('https://api.spotify.com/v1/search', {params: {q: 'R', type: "artist", limit: data.limit ? data.limit : 1}, headers: {Authorization: this.token}});
+  getArtist(data: any): Observable<any> {
+    return this.http.get('https://api.spotify.com/v1/search', {params: {q: data.q ? data.q: '', type: "artist", limit: data.limit ? data.limit : 1}, headers: {Authorization: this.token}});
+  }
+
+  setArtistId(id: any) {
+    this.artistId = id;
+  }
+
+  getArtistId() {
+    return this.artistId;
   }
 
   getGenres() {
