@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.spotifyService.getToken().subscribe((data: any) => {
-      console.log(data);
       this.spotifyService.token = 'Bearer ' + data.access_token;
     })
   }
