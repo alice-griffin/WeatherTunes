@@ -42,12 +42,23 @@ export class SearchCriteriaComponent implements OnInit {
     });
   };
 
-  artistFormSubmitted(data: NgForm) { 
-    this.spotifyService.getArtistId({}).subscribe((data: any ) => {
+  artistFormSubmitted(data: NgForm) {  
+    let parameters = {
+      q: data.value.artist
+    }
+    this.spotifyService.getArtist(parameters).subscribe((data: any ) => {
       this.artist = data; 
       this.artistId = data.artists.items[0].id; 
-      console.log(this.artistId);
     });
+    
+    let params = {
+      artist: this.artistId
+    }
+    this.spotifyService.getPlaylist(params).subscribe((data: any) => {
+      this.spotifyService.playlist = data;
+      console.log(data);
+    });
+    
 }
 
 }
