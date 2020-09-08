@@ -20,7 +20,6 @@ export class SearchCriteriaComponent implements OnInit {
   iconUrl: string;
   artist: any;
   artistId: string;
-  playlist: any; 
 
   ngOnInit(): void {
     this.spotifyService.getToken().subscribe((data: any) => {
@@ -30,35 +29,45 @@ export class SearchCriteriaComponent implements OnInit {
     
   }
 
-  formSubmitted(data: NgForm) {
-    this.weatherService.getWeather(data.value.zipCode).subscribe((data: any) => {
-      this.weather = data; 
-      this.weatherDesc = data.weather[0].description;
+
+  searchFormSubmitted(data: NgForm) {
+    this.weatherService.getWeather(data.value.zipCode).subscribe((da: any) => {
+      this.weather = da; 
+      this.weatherDesc = da.weather[0].main;
       console.log(this.weatherDesc);
       console.log(this.weather);
       this.isSubmitted = true; 
-      this.icon = data.weather[0].icon;
+      this.icon = da.weather[0].icon;
       this.iconUrl = "http://openweathermap.org/img/wn/" + this.icon + ".png";
+      let parameters = {
+        q: data.value.artist
+      }
+      this.spotifyService.getArtist(parameters).subscribe((d: any ) => {
+        console.log(d)
+        this.artist = d; 
+        this.artistId = d.artists.items[0].id;
+        let params = {
+          artist: this.artistId
+        }
+        this.getPlaylistParameters('rainy', params);
+        this.spotifyService.getPlaylist(params).subscribe((res: any) => {
+          this.spotifyService.playlist = res;
+          console.log(res);
+        }); 
+      });
     });
-  };
+  }
 
-  artistFormSubmitted(data: NgForm) {  
-    let parameters = {
-      q: data.value.artist
-    }
-    this.spotifyService.getArtist(parameters).subscribe((data: any ) => {
-      this.artist = data; 
-      this.artistId = data.artists.items[0].id; 
-    });
-    
-    let params = {
-      artist: this.artistId
-    }
-    this.spotifyService.getPlaylist(params).subscribe((data: any) => {
-      this.spotifyService.playlist = data;
-      console.log(data);
-    });
-    
-}
+  getPlaylistParameters(weather: string, parameters: any) {
+    switch(weather) {
+      case 'Mist':
+        parameters.target_energy = 0.4;
+        break;
+      case '':
+      default:
+        console.log('default hit');
 
+    }
+
+  }
 }
