@@ -17,14 +17,8 @@ export class AppComponent implements OnInit {
     this.spotifyService.getToken().subscribe((data: any) => {
       this.spotifyService.token = 'Bearer ' + data.access_token;
     })
-  }
-  
-      // this.spotifyService.getPlaylist({}).subscribe((response: any) => {
-      //   console.log(response);
-
-
-      // this.spotifyService.getGenres().subscribe((reply: any) => {
-      //   this.genre = reply; 
-      //   console.log(reply);
-
+    this.spotifyService.getGenres().subscribe((reply: any) => {
+      this.genre = reply; 
+      console.log(reply);
+  })}
 }
