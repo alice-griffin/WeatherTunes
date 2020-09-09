@@ -28,6 +28,7 @@ export class SpotifyService {
     let params = {
       limit: data.limit ? data.limit : 10,
       seed_artists: data.artist ? data.artist : '',
+      seed_genres: data.genres ? data.genres : '',
       target_valence: data.target_valence ? data.target_valence : 0.5,
       target_energy: data.target_energy ? data.target_energy : 1,
       target_danceability: data.target_danceability ? data.target_danceability : 0.7
@@ -38,14 +39,6 @@ export class SpotifyService {
   getArtist(data: any): Observable<any> {
     return this.http.get('https://api.spotify.com/v1/search', {params: {q: data.q ? data.q: '', type: "artist", limit: data.limit ? data.limit : 1}, headers: {Authorization: this.token}});
   }
-
-  // setArtistId(id: any) {
-  //   this.artistId = id;
-  // }
-
-  // getArtistId() {
-  //   return this.artistId;
-  // }
 
   getGenres() {
     return this.http.get('https://api.spotify.com/v1/recommendations/available-genre-seeds', {headers: {Authorization: this.token}})
