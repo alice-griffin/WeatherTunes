@@ -66,34 +66,65 @@ export class SearchCriteriaComponent implements OnInit {
   getPlaylistParameters(weather: string, parameters: any) {
     switch (weather) {
       case 'Mist':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 0.3;
+        parameters.target_acousticness = 1.0; 
         break;
       case 'Thunderstorm':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 0.6;
+        parameters.target_mode = 0; 
         break;
       case 'Drizzle':
         parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_instrumentalness = 1.0; 
         break;
       case 'Rain':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 0.5;
+        parameters.target_instrumentalness = 1.0; 
         break;
       case 'Snow':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 0.2; 
         break;
       case 'Clear':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_danceability = 1.0;
+        parameters.target_popularity = 100; 
         break;
       case 'Clouds':
-        parameters.target_energy = 0.4;
+        parameters.target_energy = 0.5;
         parameters.target_danceability: 
         break;
       case 'Rainy':
+        parameters.target_energy = 0.2;
+        parameters.target_acousticness = 1.0; 
+        break;
+      case 'Smoke':
+        parameters.target_energy = 0.8;
+        parameters.target_danceability = 0.0;
+        break;
+      case 'Haze':
+        parameters.target_energy = 0.3;
+        parameters.target_acousticness = 1.0; 
+        break;
+      case 'Dust':
+        parameters.target_energy = 0.6;
+        parameters.target_min_tempo = 150; 
+        break;
+      case 'Fog':
+        parameters.target_energy = 0.3;
+        parameters.target_danceability = 0.4; 
+        break;
+      case 'Sand':
+        parameters.target_energy = 0.4;
+        parameters.target_danceability: 
+        break;
+      case 'Ash':
+        parameters.target_energy = 0.4;
+        parameters.target_danceability: 
+        break;
+      case 'Squall':
+        parameters.target_energy = 0.4;
+        parameters.target_danceability: 
+        break;
+      case 'Tornado':
         parameters.target_energy = 0.4;
         parameters.target_danceability: 
         break;
