@@ -24,6 +24,7 @@ export class SearchCriteriaComponent implements OnInit {
   artistId: string;
   genre: any;
 
+    
   ngOnInit(): void {
     this.spotifyService.getToken().subscribe((data: any) => {
       console.log(data);
@@ -48,14 +49,13 @@ export class SearchCriteriaComponent implements OnInit {
         this.artist = d;
         this.artistId = d.artists.items[0].id;
         let params = {
-          artist: this.artistId,
-        };
-        this.spotifyService
-          .getPlaylist(this.weatherDesc, params)
-          .subscribe((res: any) => {
-            this.spotifyService.playlist = res;
-            console.log(res);
-          });
+            artist: this.artistId,
+            valence: data.value.valence,
+          };
+        this.spotifyService.getPlaylist(this.weatherDesc, params).subscribe((res: any) => {
+          this.spotifyService.playlist = res;
+          console.log(res);
+        });
       });
     });
   }

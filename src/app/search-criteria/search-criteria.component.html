@@ -9,6 +9,9 @@
 <form class="form2Class" #searchMusicForm="ngForm" (submit)="searchFormSubmitted(searchMusicForm)">
     <input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode" ngModel>
     <input placeholder="Type in an Artist." name="artist" type="text" id="artist" ngModel>
+    <div class="slidecontainer">
+        <input type="range" step="0.1" min="0" max="1" value="0.5" class="slider" name="valence" ngModel>
+    </div>
     <button>Get Playlist</button>
 </form>
 

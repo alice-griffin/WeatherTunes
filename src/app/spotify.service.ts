@@ -12,6 +12,7 @@ export class SpotifyService {
   playlist: any[];
   artist: any;
   artistId: any;
+  valence: any;
 
   constructor(private http: HttpClient) {}
 
@@ -28,6 +29,7 @@ export class SpotifyService {
       }
     );
   }
+  
   getPlaylist(weather: string, data: any): Observable<any> {
     let params;
     switch (weather) {
