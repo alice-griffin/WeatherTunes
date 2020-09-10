@@ -47,14 +47,10 @@ export class SearchCriteriaComponent implements OnInit {
         console.log(d);
         this.artist = d;
         this.artistId = d.artists.items[0].id;
-        if (genre) 
         let params = {
-          genre: this.genre,
-        };
-        if (artist) {
-          artist: this.artistId
-        }
-        this.getPlaylistParameters(this.weatherDesc, params);
+            artist: this.artistId,
+          };
+        this.getPlaylistParameters('Mist', params);
         this.spotifyService.getPlaylist(params).subscribe((res: any) => {
           this.spotifyService.playlist = res;
           console.log(res);
@@ -90,7 +86,7 @@ export class SearchCriteriaComponent implements OnInit {
         break;
       case 'Clouds':
         parameters.target_energy = 0.5;
-        parameters.target_danceability: 
+        parameters.target_acousticness = 0.5
         break;
       case 'Rainy':
         parameters.target_energy = 0.2;
@@ -113,20 +109,20 @@ export class SearchCriteriaComponent implements OnInit {
         parameters.target_danceability = 0.4; 
         break;
       case 'Sand':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 1;
+        parameters.target_danceability = 1;
         break;
       case 'Ash':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 0.8;
+        parameters.target_danceability = 0;
         break;
       case 'Squall':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 0.7;
+        parameters.target_danceability = 0.7;
         break;
       case 'Tornado':
-        parameters.target_energy = 0.4;
-        parameters.target_danceability: 
+        parameters.target_energy = 1.0;
+        parameters.target_danceability = 0.4;
         break;
       default:
         console.log('default hit');

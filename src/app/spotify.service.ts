@@ -29,9 +29,11 @@ export class SpotifyService {
       limit: data.limit ? data.limit : 10,
       seed_artists: data.artist ? data.artist : '',
       seed_genres: data.genres ? data.genres : '',
-      target_valence: data.target_valence ? data.target_valence : 0.5,
-      target_energy: data.target_energy ? data.target_energy : 1,
-      target_danceability: data.target_danceability ? data.target_danceability : 0.7
+      target_valence: data.target_valence ? data.target_valence: null,
+      target_energy: data.target_energy ? data.target_energy: null,
+      target_danceability: data.target_danceability ? data.target_valence: null,
+      target_acousticness: data.target_acousticness ? data.target_acousticness: null,
+      target_instrumentalness: data.target_instrumentalness ? data.target_instrumentalness: null
     }
     return this.http.get('https://api.spotify.com/v1/recommendations', {params: params, headers: {Authorization: this.token}});
   }
