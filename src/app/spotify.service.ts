@@ -13,6 +13,7 @@ export class SpotifyService {
   playlist: any[]; 
   artist: any; 
   artistId: any;
+  valence: any;
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +30,7 @@ export class SpotifyService {
       limit: data.limit ? data.limit : 10,
       seed_artists: data.artist ? data.artist : '',
       seed_genres: data.genres ? data.genres : '',
-      target_valence: data.target_valence ? data.target_valence: null,
+      target_valence: data.valence ? data.valence: null,
       target_energy: data.target_energy ? data.target_energy: null,
       target_danceability: data.target_danceability ? data.target_valence: null,
       target_acousticness: data.target_acousticness ? data.target_acousticness: null,

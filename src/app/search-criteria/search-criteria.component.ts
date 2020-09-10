@@ -24,6 +24,7 @@ export class SearchCriteriaComponent implements OnInit {
   artistId: string;
   genre: any;
 
+    
   ngOnInit(): void {
     this.spotifyService.getToken().subscribe((data: any) => {
       console.log(data);
@@ -49,6 +50,7 @@ export class SearchCriteriaComponent implements OnInit {
         this.artistId = d.artists.items[0].id;
         let params = {
             artist: this.artistId,
+            valence: data.value.valence,
           };
         this.getPlaylistParameters('Mist', params);
         this.spotifyService.getPlaylist(params).subscribe((res: any) => {
