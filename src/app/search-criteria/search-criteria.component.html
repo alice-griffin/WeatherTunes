@@ -1,18 +1,13 @@
-<!-- <form class="formClass" #searchForm="ngForm" (submit)="formSubmitted(searchForm)">
-    <h3>First, let's get the weather based on your location...</h3>
-    <input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode" ngModel>
-    <button>Get Weather</button>
-    <div [style.display]="isSubmitted ? 'block' : 'none' "><img id="wi-icon" [src]="this.iconUrl"></div>
-    
-</form> -->
-
 <form class="form2Class" #searchMusicForm="ngForm" (submit)="searchFormSubmitted(searchMusicForm)">
-    <input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode" ngModel>
-    <input placeholder="Type in an Artist." name="artist" type="text" id="artist" ngModel>
+    <div class="text-inputs">
+        <input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode" ngModel>
+        <input placeholder="Type in an Artist." name="artist" type="text" id="artist" ngModel>
+    </div>
     <div class="slidecontainer">
         <input type="range" step="0.1" min="0" max="1" value="0.5" class="slider" name="valence" ngModel>
     </div>
     <button>Get Playlist</button>
+    <i class="fas fa-arrow-circle-down"></i>
 </form>
 
 <div [style.display]="isSubmitted ? 'block' : 'none' "><img id="wi-icon" [src]="this.iconUrl">

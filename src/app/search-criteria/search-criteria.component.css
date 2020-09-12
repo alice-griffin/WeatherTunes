@@ -1,3 +1,17 @@
 .hidden {
     display: none; 
 }
+
+
+.text-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-inputs input {
+    border: none;
+    border-bottom: 1px solid #0f0f0f;
+    width: fit-content;
+    padding: 5px 10px; 
+    font-family: 'Barlow', sans-serif;
+}
