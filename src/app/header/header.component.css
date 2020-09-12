@@ -11,10 +11,13 @@ body {
     display: flex;
 }
 
-h1 {
+.title {
+    width: 100%;
     display: flex;
     justify-content: center; 
     align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
 }
 
 .nav-sidebar {
@@ -25,7 +28,7 @@ h1 {
     padding: 0px;
     margin: 0;
     height: calc(100vh - 60px);
-    background-color: #1b1b1b;
+    background-color: #0f0f0f;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
 }
@@ -35,16 +38,29 @@ h1 {
     visibility: hidden;
 }
 
+.nav-main ul li {
+    visibility: hidden;
+}
+
 .nav-sidebar ul li {
     line-height: 40px;
     list-style: none;
-    color: white; 
+    border-bottom: 1px solid #e6e6e6;
+    width: fit-content;
+}
+
+.nav-sidebar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color:  #e6e6e6;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 2px;
 }
 
 .btn-toggle-nav {
     width: 50px;
     height: 100%;
-    background-image: url(hamburger-icon.png);
+    background-image: url(9961263041586786441-128.png);
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: center;

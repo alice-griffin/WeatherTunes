@@ -18,7 +18,7 @@ export class HeaderComponent {
     if (this.toggleNavStatus === false) {
         getSidebarUl.style.visibility = "visible";
         getSidebar.style.visibility = "visible";
-        getSidebar.style.width = "100px";
+        getSidebar.style.width = "130px";
 
         this.toggleNavStatus = true;
 
