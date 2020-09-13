@@ -23,6 +23,7 @@ export class SearchCriteriaComponent implements OnInit {
   artist: any = '';
   artistId: string;
   genre: any;
+  track: object;
 
     
   ngOnInit(): void {
@@ -53,8 +54,8 @@ export class SearchCriteriaComponent implements OnInit {
             valence: data.value.valence,
           };
         this.spotifyService.getPlaylist(this.weatherDesc, params).subscribe((res: any) => {
-          this.spotifyService.playlist = res;
-          console.log(res);
+          this.spotifyService.playlist = res.tracks;
+          console.log(res.tracks);
         });
       });
     });

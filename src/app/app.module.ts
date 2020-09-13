@@ -9,6 +9,8 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
+import { SingleTrackComponent } from './single-track/single-track.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AboutComponent } from './about/about.component';
     SearchCriteriaComponent,
     HeaderComponent,
     HomepageComponent,
-    AboutComponent
+    AboutComponent,
+    SingleTrackComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,
