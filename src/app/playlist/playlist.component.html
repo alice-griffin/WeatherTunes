@@ -1,4 +1,1 @@
-
-<app-single-track *ngFor = "let track of getPlaylist()"[child]="track">
-
-</app-single-track>
+<div><app-single-track *ngFor="let track of getPlaylist(); last as isLast"[child]="track"></app-single-track></div>

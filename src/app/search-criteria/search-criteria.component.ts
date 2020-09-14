@@ -23,7 +23,6 @@ export class SearchCriteriaComponent implements OnInit {
   artist: any = '';
   artistId: string;
   genre: any;
-  track: object;
 
     
   ngOnInit(): void {
