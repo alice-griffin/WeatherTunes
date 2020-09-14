@@ -1,3 +1,11 @@
-<div>
-    {{ child.name }}
+<div class="parent-container">
+    <div class="playlist-container">
+        <img [src]="child.album.images[2].url">
+        <div class="song-info">
+            <span [style.font-weight]="'bold'">{{child.album.artists[0].name}}</span>
+            <span [style.font-style]="'italic'">{{child.name}}</span>
+        </div>
+        <a [attr.href]="'https://open.spotify.com/track/' + child.id"><span title="open on spotify">
+            <i class="fas fa-play-circle"></i></span></a>
+    </div>
 </div>

@@ -1,13 +1,18 @@
 <form class="form2Class" #searchMusicForm="ngForm" (submit)="searchFormSubmitted(searchMusicForm)">
     <div class="text-inputs">
+        <div class="weather-icon" [style.visibility]="isSubmitted ? 'visible' : 'hidden' "><img id="wi-icon"
+                [src]="this.iconUrl">{{this.weatherDesc}}</div> 
         <input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode" ngModel>
         <input placeholder="Type in an Artist." name="artist" type="text" id="artist" ngModel>
     </div>
-    <div class="slidecontainer">
+    <div class="slide-container">
+        <div class="slider-title">
+            <p>Change the vibe:</p>
+        </div>
+        <div class="label-sad">sad</div>
         <input type="range" step="0.1" min="0" max="1" value="0.5" class="slider" name="valence" ngModel>
+        <div class="label-happy">happy</div>
     </div>
     <button>Get Playlist</button>
     <i class="fas fa-arrow-circle-down"></i>
 </form>
-
-<div [style.display]="isSubmitted ? 'block' : 'none' "><img id="wi-icon" [src]="this.iconUrl">
