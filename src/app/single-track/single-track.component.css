@@ -9,6 +9,11 @@
     width: 75%;
     display: flex; 
     justify-content: space-between;
+    background-color: white;
+}
+
+.playlist-container:hover {
+    background-color: rgb(247, 247, 247);
 }
 
 .album-info {

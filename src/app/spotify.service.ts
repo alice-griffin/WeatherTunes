@@ -13,6 +13,7 @@ export class SpotifyService {
   artist: any;
   artistId: any;
   valence: any;
+  genres: string; 
 
   constructor(private http: HttpClient) {}
 
@@ -188,7 +189,7 @@ export class SpotifyService {
           target_danceability: 0.4,
           limit: data.limit ? data.limit : 10,
           seed_artists: data.artist ? data.artist : '',
-          seed_genres: data.genres ? data.genres : '',
+          seed_genres: data.genre ? data.genre : '',
           target_valence: data.valence ? data.valence : 0.5,
         };
         break;
