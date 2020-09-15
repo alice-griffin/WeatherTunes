@@ -54,7 +54,7 @@ export class SearchCriteriaComponent implements OnInit {
           };
         this.spotifyService.getPlaylist(this.weatherDesc, params).subscribe((res: any) => {
           this.spotifyService.playlist = res.tracks;
-          console.log(res.tracks);
+          console.log(res);
         });
       });
     });
