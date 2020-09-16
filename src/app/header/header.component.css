@@ -20,6 +20,10 @@ body {
     font-size: 18px;
 }
 
+.title-link {
+    text-decoration: none;
+}
+
 .nav-sidebar {
     position: fixed;
     left: 0;
