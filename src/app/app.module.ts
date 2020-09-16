@@ -11,6 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { SingleTrackComponent } from './single-track/single-track.component';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PlaylistComponent } from './playlist/playlist.component';
     HomepageComponent,
     AboutComponent,
     SingleTrackComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
