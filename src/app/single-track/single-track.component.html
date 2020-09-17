@@ -8,10 +8,9 @@
             </div>
         </div>
         <div class="preview-btns">
-        <div class="preview-text">Preview:</div>
-            <audio id="player" [src]="child.preview_url"></audio>
-            <i onclick="document.getElementById('player').play()" class="far fa-play-circle"></i>
-            <i onclick="document.getElementById('player').pause()" class="far fa-pause-circle"></i>
+            <div class="preview-text">Preview:</div>
+            <audio id="player" controls [src]="child.preview_url"></audio>
         </div>
     </div>
+
 </div>

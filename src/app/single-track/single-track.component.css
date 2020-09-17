@@ -1,15 +1,17 @@
 .parent-container {
     display: flex;
     justify-content: center;
-
 }
 
 .playlist-container {
     font-family: 'Barlow', 'sans serif';
     width: 75%;
     display: flex; 
-    justify-content: space-between;
+    flex-direction: column;
     background-color: white;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .playlist-container:hover {
@@ -34,4 +36,10 @@ span {
 .preview-btns {
     display: inline-block;
     vertical-align: middle;
+}
+
+.preview-text {
+    font-style: italic;
+    font-size: 14px;
+    padding: 3px;
 }
