@@ -9,6 +9,7 @@ body {
     width: 100%;
     height: 60px;
     display: flex;
+    background-color: white; 
 }
 
 .title {
@@ -22,6 +23,7 @@ body {
 
 .title-link {
     text-decoration: none;
+    color: black; 
 }
 
 .nav-sidebar {
@@ -76,3 +78,7 @@ body {
     visibility: hidden;
 }
 
+.iframe-container img {
+    height: auto;
+    background-color: white;
+}

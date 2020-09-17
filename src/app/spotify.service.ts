@@ -189,7 +189,7 @@ export class SpotifyService {
           target_danceability: 0.4,
           limit: data.limit ? data.limit : 10,
           seed_artists: data.artist ? data.artist : '',
-          seed_genres: data.genre ? data.genre : '',
+          seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
         };
         break;

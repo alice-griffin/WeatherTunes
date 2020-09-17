@@ -5,16 +5,20 @@
                     [src]="this.iconUrl">{{this.weatherDesc}}</div>
             <div class="zip-input"><input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode"
                     ngModel></div>
+            <small [style.visibility]="'hidden'" id="zip-error">*You need a zip-code.</small>
             <div class="switch-field">
-                <button [style.border]="'2px solid orange'" class="input-btn" id="artist-btn" type="button" (click)="showArtistInput()">Search by Artist</button>
-                <button class="input-btn" id="genre-btn" type="button" (click)="showGenreInput()">Search by Genre</button>
+                <button [style.border]="'2px solid orange'" class="input-btn" id="artist-btn" type="button"
+                    (click)="showArtistInput(searchMusicForm)">Search by Artist</button>
+                <button class="input-btn" id="genre-btn" type="button" (click)="showGenreInput()">Search by
+                    Genre</button>
             </div>
             <div class="form-inputs">
                 <input [style.display]="'block'" placeholder="Type in an Artist." name="artist" type="text" id="artist"
                     ngModel>
-                <input [style.display]="'none'" placeholder="Type in a Genre." name="genre" type="text" id="genre"
-                    ngModel>
+                <input [style.display]="'none'" placeholder="Type in a Genre." type="text" id="genre"
+                    [(ngModel)]="genre" [ngModelOptions]="{standalone: true}">
             </div>
+            <small [style.visibility]="'hidden'" id="artist-error">*You need a genre or artist.</small>
         </div>
         <div class="slide-container">
             <div class="slider-title">

@@ -7,10 +7,11 @@
                 <span [style.font-style]="'italic'">{{child.name}}</span>
             </div>
         </div>
-        <iframe [src]="child.preview_url | safe" type="audio" frameborder="0" width="fit-content" height="fit-content"></iframe>
-        <div class="play-button">
-            <a [attr.href]="'https://open.spotify.com/track/' + child.id">
-                <span title="open on spotify"><i class="fas fa-play-circle"></i></span></a>
+        <div class="preview-btns">
+        <div class="preview-text">Preview:</div>
+            <audio id="player" [src]="child.preview_url"></audio>
+            <i onclick="document.getElementById('player').play()" class="far fa-play-circle"></i>
+            <i onclick="document.getElementById('player').pause()" class="far fa-pause-circle"></i>
         </div>
     </div>
 </div>

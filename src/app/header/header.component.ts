@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpotifyService } from '../spotify.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent {
 
   toggleNavStatus: boolean = false;
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyService) { }
 
   toggleNav() {
     let getSidebar = document.querySelector(".nav-sidebar") as HTMLElement;
@@ -29,4 +30,5 @@ export class HeaderComponent {
         this.toggleNavStatus = false;
     }
 }
+
 }

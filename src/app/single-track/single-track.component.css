@@ -27,7 +27,11 @@ span {
     margin-left: 5px; 
 }
 
-.fas {
+.far {
     font-size: 24px; 
 }
 
+.preview-btns {
+    display: inline-block;
+    vertical-align: middle;
+}

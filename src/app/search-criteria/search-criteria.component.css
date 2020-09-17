@@ -131,3 +131,11 @@ p {
     display: flex;
     justify-content: center;
 }
+
+#zip-error, #artist-error {
+    font-size: 11px;
+    color: red; 
+    font-family: 'Helvetica', 'Arial';
+    display: flex;
+    justify-content: center;
+}
