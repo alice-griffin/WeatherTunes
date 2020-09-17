@@ -82,3 +82,9 @@ body {
     height: auto;
     background-color: white;
 }
+
+.logo {
+    width: 200px;
+    height: auto; 
+    margin-top: 20px;
+}
