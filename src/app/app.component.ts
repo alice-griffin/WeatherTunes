@@ -19,6 +19,5 @@ export class AppComponent implements OnInit {
     })
     this.spotifyService.getGenres().subscribe((reply: any) => {
       this.genre = reply; 
-      console.log(reply);
   })}
 }
