@@ -75,7 +75,7 @@ export class SearchCriteriaComponent implements OnInit {
       zipInput.style.border = '2px solid red';
     } else {
       zipError.style.visibility = 'hidden';
-      zipInput.style.border = 'none';
+      zipInput.style.borderBottom = '1px solid black';
     }
 
     if (!artistValue && !this.genre) {
@@ -84,8 +84,7 @@ export class SearchCriteriaComponent implements OnInit {
       genreInput.style.border = '2px solid red';
     } else {
       artistError.style.visibility = 'hidden';
-      artistInput.style.border = 'none';
-      genreInput.style.border = 'none';
+      genreInput.style.borderBottom = '1px solid black';
     }
   }
 

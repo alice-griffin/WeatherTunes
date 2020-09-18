@@ -1,14 +1,17 @@
 .form-container {
     display: flex; 
     justify-content: center;
-    margin: 20px; 
     background-color: white;
     border-radius: 25px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .text-inputs {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .text-inputs input {
@@ -78,10 +81,6 @@ form {
     padding: 5px; 
 }
 
-p {
-    font-family: 'Barlow', sans-serif;
-}
-
 .slider-title {
     display: flex; 
     justify-content: center;
@@ -102,6 +101,13 @@ p {
     padding: 12px;
     margin: 20px; 
     border-radius: 25px;
+    background-color: #b8e0f7; 
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-btn:hover {
+    transform: translateY(-7px);
 }
 
 .switch-field {
@@ -120,14 +126,36 @@ p {
     cursor: pointer; 
     line-height: 16px;
     border-radius: 25px;
+    background-color: #b8e0f7;
+    transition: all 0.3s ease 0s;
+}
+
+.input-btn:hover {
+    transform: translateY(-7px);
 }
 
 .form-inputs {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .zip-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.genre-artist-inputs {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.zipcode-input {
     display: flex;
     justify-content: center;
 }
@@ -138,4 +166,57 @@ p {
     font-family: 'Helvetica', 'Arial';
     display: flex;
     justify-content: center;
+}
+
+p {
+    font-family: 'Barlow', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.header-txt {
+    color: #7da9c2;
+    font-weight: bold; 
+}
+
+@media only screen and (min-width: 840px) {
+
+    .form-container {
+        width: 100%;
+        border-radius: 0%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .form-content {
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .zip-input, .form-inputs {
+        height: 30px;
+        margin-top: 20px;
+    }
+
+    .header-txt {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .slide-container {
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .slider-with-labels {
+        margin-left: 10px;
+        padding: 0;
+    }
+
+
 }
