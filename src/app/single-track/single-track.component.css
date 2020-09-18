@@ -5,7 +5,7 @@
 
 .playlist-container {
     font-family: 'Barlow', 'sans serif';
-    width: 75%;
+    width: 85%;
     display: flex; 
     flex-direction: column;
     background-color: white;
@@ -42,4 +42,14 @@ span {
     font-style: italic;
     font-size: 14px;
     padding: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+    .playlist-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    
 }
