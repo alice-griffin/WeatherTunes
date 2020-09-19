@@ -1,26 +1,31 @@
-body {
-    background-image: linear-gradient(to bottom right, red, yellow);
+.container {
     display: flex;
+    width: 100%; 
+    justify-content: center;
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    padding-bottom: 15px;
-    text-align: center;
+    font-family: 'Barlow', sans-serif;
 }
 
-.alice {
-    height: 300px;
-    width: 275px;
+.alice-pic {
+    height: 250px;
+    width: auto; 
     padding: 15px;
 }
 
-.seth {
-    height: 300px;
-    width: 275px;
+.seth-pic {
+    height: 250px;
+    width: auto; 
     padding: 15px;
 }
 
-.gerard {
-    height: 300px;
-    width: 275px;
+.gerard-pic {
+    height: 250px;
+    width: auto; 
     padding: 15px;
 }
 
@@ -35,7 +40,6 @@ body {
 
 .fa {
     padding: 20px;
-    font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
@@ -43,8 +47,28 @@ body {
 
 .github {
     padding: 20px;
-    font-size: 30px;
     width: 50px;
     text-align: center;
-    text-decoration: none;
+}
+
+.github:hover {
+    opacity: 0.7;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    color: #7da9c2;
+    letter-spacing: 1px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (min-width: 840px) {
+
+    .profiles {
+        flex-direction: row;
+    }
 }

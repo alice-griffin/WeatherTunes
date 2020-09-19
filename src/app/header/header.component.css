@@ -109,9 +109,7 @@ body {
         font-size: 20px; 
         font-family: 'Nunito';
         font-weight: bold; 
-        color: white; 
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #7da9c2;
+        color:  #7da9c2;
     }
 
     .desktop-links {

@@ -3,7 +3,7 @@
     justify-content: center;
     background-color: white;
     border-radius: 25px;
-    width: 75%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -43,7 +43,7 @@ form {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 150px;
+    width: 120px;
     color: black; 
     background: rgb(15,35,79);
     background: linear-gradient(90deg, rgba(15,35,79,1) 21%, rgba(253,123,83,1) 87%);
@@ -191,7 +191,7 @@ p {
 
     .form-content {
         display: flex; 
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
@@ -218,5 +218,11 @@ p {
         padding: 0;
     }
 
+    .buttons-input {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
 
 }

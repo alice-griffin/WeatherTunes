@@ -17,6 +17,8 @@
                     <small [style.visibility]="'hidden'" id="zip-error">*You need a zip-code.</small>
                 </div>
 
+                <div class="button-inputs">
+
                 <div class="switch-field">
                     <button [style.border]="'2px solid orange'" class="input-btn" id="artist-btn" type="button"
                         (click)="showArtistInput(searchMusicForm)">Search by Artist</button>
@@ -32,6 +34,8 @@
                             [(ngModel)]="genre" [ngModelOptions]="{standalone: true}">
                     </div>
                     <small [style.visibility]="'hidden'" id="artist-error">*You need a genre or artist.</small>
+                </div>
+
                 </div>
 
 
