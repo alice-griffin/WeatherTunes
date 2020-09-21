@@ -2,16 +2,17 @@
 
     <div class="playlist-container">
         <div class="album-info">
-            <img [src]="child.album.images[2].url">
+            <a [href]="track.external_urls.spotify"><img [src]="track.album.images[2].url"></a>
             <div class="song-info">
-                <span [style.font-weight]="'bold'">{{child.album.artists[0].name}}</span>
-                <span [style.font-style]="'italic'">{{child.name}}</span>
+                <span [style.font-weight]="'bold'">{{track.album.artists[0].name}}</span>
+                <span [style.font-style]="'italic'">{{track.name}}</span>
             </div>
         </div>
+
         <div class="preview-btns">
             <div class="preview-text">Preview:</div>
             <div class="audio">
-                <audio id="player" controls [src]="child.preview_url"></audio>
+                <audio id="player" controls [src]="track.preview_url"></audio>
             </div>
         </div>
     </div>

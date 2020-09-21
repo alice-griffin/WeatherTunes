@@ -10,10 +10,6 @@ export class SpotifyService {
   clientId: string = 'd0502d4fc5a9406b8afda0decad6a3d0';
   clientSecret: string = '6f9fdb44e4bf49bda20513dd4399bff6';
   playlist: any[];
-  artist: any;
-  artistId: any;
-  valence: any;
-  genres: string; 
 
   constructor(private http: HttpClient) {}
 

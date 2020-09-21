@@ -88,7 +88,8 @@ form {
 
 .fas {
     font-size: 36px; 
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
+    color: #FFA500;
 }
 
 .playlist-btn {
@@ -180,7 +181,7 @@ p {
     font-weight: bold; 
 }
 
-@media only screen and (min-width: 840px) {
+@media only screen and (min-width: 804px) {
 
     .form-container {
         width: 100%;

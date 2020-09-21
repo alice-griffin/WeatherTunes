@@ -9,18 +9,27 @@
     display: flex; 
     flex-direction: column;
     background-color: white;
-    border-bottom: 1px solid black;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px; 
+    margin-top: 15px; 
+    border: 1px solid orange; 
 }
 
 .playlist-container:hover {
-    background-color: rgb(247, 247, 247);
+    background-color: #ededed;
 }
 
 .album-info {
     display: flex;
     justify-content: flex-start; 
+}
+
+img {
+    align-self: center;
+}
+
+img:hover {
+    opacity: 0.7;
+    cursor: pointer; 
 }
 
 span {
@@ -45,6 +54,7 @@ span {
 }
 
 @media only screen and (min-width: 768px) {
+
     .playlist-container {
         flex-direction: row;
         justify-content: space-between;

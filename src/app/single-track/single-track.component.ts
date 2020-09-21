@@ -9,8 +9,8 @@ import { SpotifyService } from '../spotify.service';
 })
 export class SingleTrackComponent implements OnInit {
 
-  track: any;
-  @Input() child: any;
+
+  @Input() track: any;
   
 
   constructor() { }
