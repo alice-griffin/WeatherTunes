@@ -78,11 +78,6 @@ body {
     visibility: hidden;
 }
 
-.iframe-container img {
-    height: auto;
-    background-color: white;
-}
-
 .logo {
     width: 200px;
     height: auto; 

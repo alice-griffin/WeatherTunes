@@ -1,1 +1,2 @@
-<div><app-single-track *ngFor="let track of getPlaylist()" [child]="track"></app-single-track></div>
+<div *ngIf="checkEmpty">No Results!</div>
+<div><app-single-track *ngFor="let track of getPlaylist()" [track]="track"></app-single-track></div>

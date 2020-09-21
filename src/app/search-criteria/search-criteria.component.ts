@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { SpotifyService } from '../spotify.service';
 import { NgForm } from '@angular/forms';
-import { NgStyle } from '@angular/common';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-criteria',
   templateUrl: './search-criteria.component.html',
   styleUrls: ['./search-criteria.component.css'],
 })
+
 export class SearchCriteriaComponent implements OnInit {
   constructor(
     private weatherService: WeatherService,
@@ -18,9 +19,10 @@ export class SearchCriteriaComponent implements OnInit {
   weather: any;
   weatherDesc: string;
   isSubmitted: boolean = false;
+  isEmpty: boolean = false;
   icon: any;
   iconUrl: string;
-  artist: any = '';
+  artist: any;
   artistId: string;
   genres: string;
   genre: string;
@@ -65,26 +67,20 @@ export class SearchCriteriaComponent implements OnInit {
     let artistInput = document.getElementById('artist') as HTMLInputElement;
     let zipError = document.getElementById('zip-error') as HTMLElement;
     let artistError = document.getElementById('artist-error') as HTMLElement;
-    let genreInput = document.getElementById('genre') as HTMLElement;
 
     let zipValue = zipInput.value;
     let artistValue = artistInput.value;
 
     if (!zipValue) {
       zipError.style.visibility = 'visible';
-      zipInput.style.border = '2px solid red';
     } else {
       zipError.style.visibility = 'hidden';
-      zipInput.style.borderBottom = '1px solid black';
     }
 
     if (!artistValue && !this.genre) {
       artistError.style.visibility = 'visible';
-      artistInput.style.border = '2px solid red';
-      genreInput.style.border = '2px solid red';
     } else {
       artistError.style.visibility = 'hidden';
-      genreInput.style.borderBottom = '1px solid black';
     }
   }
 
@@ -133,11 +129,15 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   onSuccess(data: any) {
-    this.spotifyService.playlist = data.tracks;
-    console.log(data.tracks);
+    if (data.tracks.length === 0) {
+      this.isEmpty = true;
+    } else {
+      this.spotifyService.playlist = data.tracks;
+    }
   }
 
   onError(error: Error) {
     console.log(error.message);
   }
+
 }
