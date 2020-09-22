@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
 import { SearchCriteriaComponent } from '../search-criteria/search-criteria.component';
 
@@ -7,21 +7,24 @@ import { SearchCriteriaComponent } from '../search-criteria/search-criteria.comp
   templateUrl: './playlist.component.html',
   styleUrls: ['./playlist.component.css']
 })
-export class PlaylistComponent implements AfterViewInit {
+export class PlaylistComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { }
 
-  @ViewChild(SearchCriteriaComponent) childReference;
-  checkEmpty: any;
+  checkEmpty: boolean;
 
-  ngAfterViewInit(): void {
-    this.checkEmpty = this.childReference.isEmpty; 
-    console.log(this.checkEmpty)
+  ngOnInit(): void {
+    
   }
 
   getPlaylist() {
       return this.spotifyService.playlist;
     }
+
+  getEmpty() {
+    console.log(this.spotifyService.checkEmpty);
+    return this.spotifyService.checkEmpty;
+  }
 
 }
 

@@ -20,7 +20,7 @@ export class HeaderComponent {
         getSidebarUl.style.visibility = "visible";
         getSidebar.style.visibility = "visible";
         getSidebar.style.width = "130px";
-
+        getSidebar.style.display = "fixed";
         this.toggleNavStatus = true;
 
     } else {

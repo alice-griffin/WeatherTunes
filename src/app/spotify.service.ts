@@ -10,6 +10,7 @@ export class SpotifyService {
   clientId: string = 'd0502d4fc5a9406b8afda0decad6a3d0';
   clientSecret: string = '6f9fdb44e4bf49bda20513dd4399bff6';
   playlist: any[];
+  checkEmpty: boolean;
 
   constructor(private http: HttpClient) {}
 
@@ -214,5 +215,13 @@ export class SpotifyService {
       'https://api.spotify.com/v1/recommendations/available-genre-seeds',
       { headers: { Authorization: this.token } }
     );
+  }
+
+  getEmptyVariable() {
+    return this.checkEmpty;
+  }
+
+  setEmptyVariable(isEmpty: boolean) {
+    this.checkEmpty = isEmpty;
   }
 }
