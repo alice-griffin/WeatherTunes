@@ -9,7 +9,6 @@ export class WeatherService {
 
   apiKey: string = '8cf1063d8e9f5aa64f2d98e7abdafa92';
   zipCode: string = '';
-  weather: string; 
 
   constructor(private http: HttpClient) { }
 

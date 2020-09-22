@@ -125,12 +125,14 @@ export class SearchCriteriaComponent implements OnInit {
             });
         });
       }
+      this.setEmptyVariable(this.isEmpty);
     });
   }
 
   onSuccess(data: any) {
     if (data.tracks.length === 0) {
       this.isEmpty = true;
+      console.log(this.isEmpty);
     } else {
       this.spotifyService.playlist = data.tracks;
     }
@@ -138,6 +140,10 @@ export class SearchCriteriaComponent implements OnInit {
 
   onError(error: Error) {
     console.log(error.message);
+  }
+
+  setEmptyVariable(isEmpty) {
+    return this.spotifyService.setEmptyVariable(isEmpty);
   }
 
 }
