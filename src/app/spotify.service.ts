@@ -217,11 +217,4 @@ export class SpotifyService {
     );
   }
 
-  getEmptyVariable() {
-    return this.checkEmpty;
-  }
-
-  setEmptyVariable(isEmpty: boolean) {
-    this.checkEmpty = isEmpty;
-  }
 }

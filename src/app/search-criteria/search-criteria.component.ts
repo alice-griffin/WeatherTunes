@@ -125,7 +125,6 @@ export class SearchCriteriaComponent implements OnInit {
             });
         });
       }
-      this.setEmptyVariable(this.isEmpty);
     });
   }
 
@@ -140,10 +139,6 @@ export class SearchCriteriaComponent implements OnInit {
 
   onError(error: Error) {
     console.log(error.message);
-  }
-
-  setEmptyVariable(isEmpty) {
-    return this.spotifyService.setEmptyVariable(isEmpty);
   }
 
 }
