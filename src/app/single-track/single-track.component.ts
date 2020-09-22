@@ -16,16 +16,7 @@ export class SingleTrackComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
-  // playPreview() {
-  //   let preview = document.getElementById('player') as HTMLMediaElement;
-  //   preview.play();
-  // }
-
-  // stopPreview() {
-  //   let preview = document.getElementById('player') as HTMLMediaElement;
-  //   preview.pause();
-  //   preview.currentTime = 0;
-  // }
 }

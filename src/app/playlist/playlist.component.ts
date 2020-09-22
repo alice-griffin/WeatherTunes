@@ -11,8 +11,6 @@ export class PlaylistComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { }
 
-  checkEmpty: boolean;
-
   ngOnInit(): void {
     
   }
@@ -20,11 +18,6 @@ export class PlaylistComponent implements OnInit {
   getPlaylist() {
       return this.spotifyService.playlist;
     }
-
-  getEmpty() {
-    console.log(this.spotifyService.checkEmpty);
-    return this.spotifyService.checkEmpty;
-  }
 
 }
 
