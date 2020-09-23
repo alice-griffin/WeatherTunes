@@ -20,7 +20,7 @@ export class SearchCriteriaComponent implements OnInit {
   isEmpty: boolean = false;
   icon: any;
   iconUrl: string;
-  artist: any;
+  artist: string;
   artistId: string;
   genres: string;
   genre: string;
@@ -33,6 +33,7 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   showGenreInput() {
+    this.artist = '';
     let genreInput = document.getElementById('genre') as HTMLElement;
     let artistInput = document.getElementById('artist') as HTMLElement;
     let artistBtn = document.getElementById('artist-btn') as HTMLElement;
