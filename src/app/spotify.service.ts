@@ -35,7 +35,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.3,
           target_acousticness: 1.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -43,9 +43,9 @@ export class SpotifyService {
         break;
       case 'Thunderstorm':
         params = {
-          target_energy: 0.6,
+          target_energy: 0.7,
           target_mode: 0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -55,7 +55,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.4,
           target_instrumentalness: 1.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -63,9 +63,9 @@ export class SpotifyService {
         break;
       case 'Rain':
         params = {
-          target_energy: 0.5,
+          target_energy: 0.3,
           target_instrumentalness: 1.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -74,7 +74,7 @@ export class SpotifyService {
       case 'Snow':
         params = {
           target_energy: 0.2,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -84,7 +84,7 @@ export class SpotifyService {
         params = {
           target_danceability: 1.0,
           target_popularity: 100,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -94,7 +94,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.5,
           target_acousticness: 0.5,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -104,7 +104,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.2,
           target_acousticness: 1.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -114,7 +114,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.8,
           target_danceability: 0.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -124,7 +124,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.3,
           target_acousticness: 1.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -132,9 +132,9 @@ export class SpotifyService {
         break;
       case 'Dust':
         params = {
-          target_energy: 0.6,
+          target_energy: 0.5,
           target_min_tempo: 150,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -142,9 +142,9 @@ export class SpotifyService {
         break;
       case 'Fog':
         params = {
-          target_energy: 0.3,
-          target_danceability: 0.4,
-          limit: data.limit ? data.limit : 10,
+          target_energy: 0.2,
+          target_danceability: 0.3,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -154,7 +154,7 @@ export class SpotifyService {
         params = {
           target_energy: 1.0,
           target_danceability: 1.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -164,7 +164,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.8,
           target_danceability: 0.0,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -174,7 +174,7 @@ export class SpotifyService {
         params = {
           target_energy: 0.7,
           target_danceability: 0.7,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,
@@ -184,7 +184,7 @@ export class SpotifyService {
         params = {
           target_energy: 1.0,
           target_danceability: 0.4,
-          limit: data.limit ? data.limit : 10,
+          limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
           target_valence: data.valence ? data.valence : 0.5,

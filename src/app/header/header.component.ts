@@ -15,17 +15,17 @@ export class HeaderComponent {
   toggleNav() {
     let getSidebar = document.querySelector(".nav-sidebar") as HTMLElement;
     let getSidebarUl = document.querySelector(".nav-sidebar ul") as HTMLElement;
+    let getExitButton = document.getElementById("exit-btn");
 
     if (this.toggleNavStatus === false) {
         getSidebarUl.style.visibility = "visible";
         getSidebar.style.visibility = "visible";
         getSidebar.style.width = "130px";
-        getSidebar.style.display = "fixed";
+        getExitButton.style.visibility = "visible";
         this.toggleNavStatus = true;
-
     } else {
-        getSidebar.style.visibility = "visible";
-        getSidebar.style.width = "0px"
+        getSidebar.style.width = "0px";
+        getSidebar.style.visibility = "hidden";
         getSidebarUl.style.visibility = "hidden";
         this.toggleNavStatus = false;
     }

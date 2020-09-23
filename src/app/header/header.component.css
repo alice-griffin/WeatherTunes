@@ -28,12 +28,13 @@ body {
 
 .nav-sidebar {
     position: fixed;
+    top: 0;
     left: 0;
     bottom: 0;
     width: 0px;
     padding: 0px;
     margin: 0;
-    height: calc(100vh - 80px);
+    height: 100vh;
     background-color: #7da9c2;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
@@ -84,7 +85,17 @@ body {
     margin-top: 5px;
 }
 
-@media only screen and (min-width: 786px) {
+.fas {
+    visibility: hidden;
+    float: right; 
+    color: white; 
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer; 
+}
+
+@media only screen and (min-width: 840px) {
 
     .nav-main {
         display: inline-block;
