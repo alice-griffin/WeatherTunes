@@ -50,10 +50,11 @@ body {
 }
 
 .nav-sidebar ul li {
-    line-height: 40px;
+    line-height: 20px;
     list-style: none;
     border-bottom: 1px solid #e6e6e6;
     width: fit-content;
+    margin-top: 30px;
 }
 
 .nav-sidebar ul li a {
@@ -61,7 +62,7 @@ body {
     text-transform: uppercase;
     color:  white; 
     font-family: 'Barlow', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .btn-toggle-nav {
