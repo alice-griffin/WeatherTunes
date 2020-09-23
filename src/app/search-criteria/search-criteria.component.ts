@@ -2,14 +2,12 @@ import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { SpotifyService } from '../spotify.service';
 import { NgForm } from '@angular/forms';
-import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-criteria',
   templateUrl: './search-criteria.component.html',
   styleUrls: ['./search-criteria.component.css'],
 })
-
 export class SearchCriteriaComponent implements OnInit {
   constructor(
     private weatherService: WeatherService,
@@ -89,8 +87,6 @@ export class SearchCriteriaComponent implements OnInit {
     this.weatherService.getWeather(data.value.zipCode).subscribe((da: any) => {
       this.weather = da;
       this.weatherDesc = da.weather[0].main;
-      console.log(this.weatherDesc);
-      console.log(this.weather);
       this.isSubmitted = true;
       this.icon = da.weather[0].icon;
       this.iconUrl = 'http://openweathermap.org/img/wn/' + this.icon + '.png';
@@ -100,29 +96,24 @@ export class SearchCriteriaComponent implements OnInit {
       if (this.genre) {
         let params = {
           valence: data.value.valence,
-          genres: this.genre.replace(' ', '-')
-        }
-        this.spotifyService
-            .getPlaylist(this.weatherDesc, params)
-            .subscribe({
-              next: this.onSuccess.bind(this),
-              error: this.onError.bind(this),
-            });
+          genres: this.genre.replace(' ', '-').toLowerCase(),
+        };
+        this.spotifyService.getPlaylist(this.weatherDesc, params).subscribe({
+          next: this.onSuccess.bind(this),
+          error: this.onError.bind(this),
+        });
       } else {
         this.spotifyService.getArtist(parameters).subscribe((d: any) => {
-          console.log(d);
           this.artist = d;
           this.artistId = d.artists.items[0].id;
           let params = {
             artist: this.artistId,
             valence: data.value.valence,
           };
-          this.spotifyService
-            .getPlaylist(this.weatherDesc, params)
-            .subscribe({
-              next: this.onSuccess.bind(this),
-              error: this.onError.bind(this),
-            });
+          this.spotifyService.getPlaylist(this.weatherDesc, params).subscribe({
+            next: this.onSuccess.bind(this),
+            error: this.onError.bind(this),
+          });
         });
       }
     });
@@ -131,7 +122,6 @@ export class SearchCriteriaComponent implements OnInit {
   onSuccess(data: any) {
     if (data.tracks.length === 0) {
       this.isEmpty = true;
-      console.log(this.isEmpty);
     } else {
       this.isEmpty = false;
       this.spotifyService.playlist = data.tracks;
@@ -141,5 +131,4 @@ export class SearchCriteriaComponent implements OnInit {
   onError(error: Error) {
     console.log(error.message);
   }
-
 }
