@@ -1,49 +1,36 @@
 <p class="header-txt">A playlist generator to match the weather.</p>
-
 <div class="form-container">
-
     <form class="form2Class" #searchMusicForm="ngForm" (submit)="searchFormSubmitted(searchMusicForm)">
         <div class="text-inputs">
-
             <div class="weather-icon" [style.visibility]="isSubmitted ? 'visible' : 'hidden' "><img id="wi-icon"
                     [src]="this.iconUrl">{{this.weatherDesc}}</div>
-
             <div class="form-content">
-
                 <div class="zip-input">
                     <div class="zipcode-input">
                         <input placeholder="Enter your zip code." name="zipCode" type="number" id="zipCode" ngModel>
                     </div>
                     <small [style.visibility]="'hidden'" id="zip-error">*You need a zip-code.</small>
                 </div>
-
                 <div class="button-inputs">
-
-                <div class="switch-field">
-                    <button [style.border]="'2px solid orange'" class="input-btn" id="artist-btn" type="button"
-                        (click)="showArtistInput(searchMusicForm)">Search by Artist</button>
-                    <button class="input-btn" id="genre-btn" type="button" (click)="showGenreInput()">Search by
-                        Genre</button>
-                </div>
-
-                <div class="form-inputs">
-                    <div class="genre-artist-inputs">
-                        <input [style.display]="'block'" placeholder="Type in an Artist." name="artist" type="text"
-                            id="artist" ngModel>
-                        <input [style.display]="'none'" placeholder="Type in a Genre." type="text" id="genre"
-                            [(ngModel)]="genre" [ngModelOptions]="{standalone: true}">
+                    <div class="switch-field">
+                        <button [style.border]="'2px solid orange'" class="input-btn" id="artist-btn" type="button"
+                            (click)="showArtistInput(searchMusicForm)">Search by Artist</button>
+                        <button class="input-btn" id="genre-btn" type="button" (click)="showGenreInput()">Search by
+                            Genre</button>
                     </div>
-                    <small [style.visibility]="'hidden'" id="artist-error">*You need a genre or artist.</small>
+                    <div class="form-inputs">
+                        <div class="genre-artist-inputs">
+                            <input [style.display]="'block'" placeholder="Type in an Artist." name="artist" type="text"
+                                id="artist" ngModel>
+                            <input [style.display]="'none'" placeholder="Type in a Genre." type="text" id="genre"
+                                [(ngModel)]="genre" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <small [style.visibility]="'hidden'" id="artist-error">*You need a genre or artist.</small>
+                    </div>
                 </div>
-
-                </div>
-
-
             </div>
         </div>
-
         <div class="slide-container">
-
             <div class="slider-title">
                 <p>Change the vibe:</p>
             </div>
@@ -52,9 +39,7 @@
                 <input type="range" step="0.1" min="0" max="1" value="0.5" class="slider" name="valence" ngModel>
                 <div class="label-happy">happy</div>
             </div>
-
         </div>
-
         <button class="playlist-btn">Get Playlist</button>
         <i class="fas fa-arrow-circle-down"></i>
     </form>
