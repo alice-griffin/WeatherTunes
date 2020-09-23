@@ -63,7 +63,7 @@ export class SpotifyService {
         break;
       case 'Rain':
         params = {
-          target_energy: 0.3,
+          target_energy: 0.2,
           target_instrumentalness: 1.0,
           limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
@@ -92,8 +92,8 @@ export class SpotifyService {
         break;
       case 'Clouds':
         params = {
-          target_energy: 0.5,
-          target_acousticness: 0.5,
+          target_energy: 0.4,
+          target_acousticness: 0.6,
           limit: data.limit ? data.limit : 15,
           seed_artists: data.artist ? data.artist : '',
           seed_genres: data.genres ? data.genres : '',
