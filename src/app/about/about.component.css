@@ -75,9 +75,23 @@ h3 {
     margin-left: 27%;
 }
 
+.description {
+    margin: 20px;
+    font-family: 'Barlow', 'sans-serif';
+}
+
 @media only screen and (min-width: 840px) {
 
     .profiles {
         flex-direction: row;
     }
+
+    .description {
+        margin: 20px;
+        margin-left: 200px;
+        margin-right: 200px;
+        font-family: 'Barlow', 'sans-serif';
+    }
+
+
 }
