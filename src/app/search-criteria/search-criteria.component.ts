@@ -133,6 +133,7 @@ export class SearchCriteriaComponent implements OnInit {
       this.isEmpty = true;
       console.log(this.isEmpty);
     } else {
+      this.isEmpty = false;
       this.spotifyService.playlist = data.tracks;
     }
   }
